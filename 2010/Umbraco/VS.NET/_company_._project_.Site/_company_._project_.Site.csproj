@@ -14,6 +14,8 @@
     <AssemblyName>_company_._project_.Site</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -135,4 +137,5 @@
   -->
   <!-- vdb.Common.Project, handles build logic for Umbraco -->
   <Import Project="_company_._project_.Web.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
