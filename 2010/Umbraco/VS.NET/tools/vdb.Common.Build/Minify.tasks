@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  
+  <!--
+    This task will minify CSS and JS files.
+    By default it was process 'all' files inside the specified directories
+    Depends on the YUI Compressor DLL, located in the Tools folder (http://yuicompressor.codeplex.com/documentation)
+
+    VISAUL STUDIO : update your projects .ProjectName.Targets file to Import the project
+    
+    <Import Project="../Build/Minify.tasks"/>
+    and get the task hooked into   
+    <Target Name="BeforeBuild" DependsOnTargets="Umbraco;Minify">
+    
+    It is possible to define the order and which files you want to minify, to do this create
+    a _Minify.props file, this can be global, or inside your Js and Css scripts folder.
+  -->
+
+  <UsingTask TaskName="CssCompressorTask" AssemblyFile="..\Tools\YUI\Yahoo.Yui.Compressor.Build.MsBuild.dll" />
+  <UsingTask TaskName="JavaScriptCompressorTask" AssemblyFile="..\Tools\YUI\Yahoo.Yui.Compressor.Build.MsBuild.dll" />
+  
+  <!-- Configuration -->
+  <PropertyGroup>
+    <!-- Folders to deal with -->
+    <CssFolder>Css</CssFolder>
+    <JsFolder>Scripts</JsFolder>
+    <!-- Where _Manifest.props file *could* be -->
+    <CssManifest>$(MSBuildProjectDirectory)\$(CssFolder)\_Minify.props</CssManifest>
+    <JsManifest>$(MSBuildProjectDirectory)\$(JsFolder)\_Minify.props</JsManifest>
+    <!-- Output -->
+    <MinifyCssOutput>$(CssFolder)\minified.css</MinifyCssOutput>
+    <MinifyJsOutput>$(JsFolder)\minified.js</MinifyJsOutput>
+  </PropertyGroup>
+
+  <!-- Import Everything, but don't import the output -->
+  <ItemGroup>
+    <CssFiles Include="$(CssFolder)\*.css" Exclude="$(MinifyCssOutput)" Condition="!Exists($(CssManifest))" />
+    <JsFiles Include="$(JsFolder)\*.js" Exclude="$(MinifyJsOutput)" Condition="!Exists($(JsManifest))" />
+  </ItemGroup>
+  
+  <!-- If a _Manifest.props file exists, import it (overrides above) -->
+  <Import Project="$(CssManifest)" Condition="Exists($(CssManifest))" />
+  <Import Project="$(JsManifest)" Condition="Exists($(JsManifest))"/>
+
+  <!-- Do something! -->
+  <Target Name="Minify">
+    <Message Text="Compressing..."/>
+
+    <Message Text="ALL | $(CssFolder)\**\*.css files" Condition="!Exists($(CssManifest)) and '@(CssFiles)'!=''" />
+    <Message Text="ALL | $(JsFolder)\**\*.js files" Condition="!Exists($(JsManifest)) and '@(JsFiles)'!=''" />
+
+    <Message Text="CSS files from Manifest | $(CssManifest)" Condition="Exists($(CssManifest))" />
+    <Message Text="JS files from Manifest | $(JsManifest)" Condition="Exists($(JsManifest))" />
+
+		<Message Text="NONE, empty folder | $(CssFolder)\**\*.css files" Condition="'@(CssFiles)'==''" />
+    <Message Text="NONE, empty folder | $(JsFolder)\**\*.js files" Condition="'@(JsFiles)'==''" />
+
+    
+    <!-- Do compression -->
+    <CssCompressorTask Condition="'@(CssFiles)'!=''"
+       SourceFiles="@(CssFiles)"
+       DeleteSourceFiles="false"
+       OutputFile="$(MinifyCssOutput)"
+       CompressionType="Standard"
+       LoggingType="Info"
+       PreserveComments="false"
+       LineBreakPosition="-1"
+     />
+
+    <JavaScriptCompressorTask Condition="'@(JsFiles)'!=''"
+        SourceFiles="@(JsFiles)"
+       DeleteSourceFiles="false"
+       OutputFile="$(MinifyJsOutput)"
+       CompressionType="Standard"
+       LoggingType="Info"
+       LineBreakPosition="-1"
+     />
+
+  </Target>
+  
+</Project>

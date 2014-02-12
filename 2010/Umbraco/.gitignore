@@ -1,0 +1,76 @@
+#
+# Misc.
+#
+ 
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+thumbs.db
+Desktop.ini
+*.orig
+dwsync.xml
+.sass-cache/
+ 
+ 
+#
+# Other Version Control Directories
+#
+ 
+.svn
+.hg
+.hgignore
+ 
+#
+# NuGet Packages Directory
+#
+
+packages
+
+ 
+#
+# Visual Studio
+#
+
+[Dd]ebug/
+[Bb]uild/
+[Rr]elease/
+[Oo]bj/
+
+# When working with multiple visual studio projects
+# It's more reliable to build into one directory e.g. /output
+
+# [Bb]in/
+[Oo]utput/
+
+ 
+*.aps
+*.bak
+*.build.csdef
+*.cache
+*.ilk
+*.lib
+*.log
+*.meta
+*.ncb
+*.obj
+*.pch
+*.pdb
+*.pgc
+*.pgd
+*.rsp
+*.sbr
+*.scc
+*.sln.docstates
+*.suo
+*.tlb
+*.tlh
+*.tli
+*.tmp
+*.user
+*.vspscc
+*.[Pp]ublish.xml
+*_i.c
+*_p.c
+.builds
