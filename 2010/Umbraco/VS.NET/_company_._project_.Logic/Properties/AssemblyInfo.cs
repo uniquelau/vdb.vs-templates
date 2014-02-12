@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("_company_._project_.Logic")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Towergate Partnership Ltd")]
+[assembly: AssemblyCompany("_companyfullname_")]
 [assembly: AssemblyProduct("_company_._project_.Logic")]
-[assembly: AssemblyCopyright("Copyright © Towergate Partnership Ltd 2014")]
+[assembly: AssemblyCopyright("Copyright © _companyfullname_ 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -6,8 +6,8 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3514371F-55CA-43F1-B3B8-786FC576B7F1}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <ProjectGuid>{_guid1_}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{_guid0_}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>_company_._project_.Site</RootNamespace>
@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\_company_._project_.Logic\_company_._project_.Logic.csproj">
-      <Project>{86C76376-91C3-4159-A067-FDF86AF477B1}</Project>
+      <Project>{_guid2_}</Project>
       <Name>_company_._project_.Logic</Name>
       <Private>False</Private>
     </ProjectReference>
