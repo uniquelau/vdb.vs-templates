@@ -94,10 +94,10 @@
     </CreateItem>
 
     <!-- 
-      SUMMARY :: Copy files from the common build 'output', into the web applications /Bin folder. This resolves issues with Visual Studio removing unreferenced DLL's (e.g. the Umbraco DLL's)
+      SUMMARY :: Copy files from the 'output', into the web applications /Bin folder. This resolves issues with Visual Studio removing unreferenced DLL's (e.g. the Umbraco DLL's)
     -->
 	  <ItemGroup>
-		  <ProjectsOutput Include="..\output\$(Configuration)\*.*" />
+		  <ProjectsOutput Include="{$TargetDir}*" />
 	  </ItemGroup>
 
 	  <Copy SourceFiles="@(ProjectsOutput)"	DestinationFolder="$(MSBuildProjectDirectory)\bin\%(RecursiveDir)" />
