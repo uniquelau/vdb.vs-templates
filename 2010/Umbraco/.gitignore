@@ -40,10 +40,6 @@ packages
 
 # When working with multiple visual studio projects
 # It's more reliable to build into one directory e.g. /output
-
-# [Bb]in/
-[Oo]utput/
-
  
 *.aps
 *.bak
