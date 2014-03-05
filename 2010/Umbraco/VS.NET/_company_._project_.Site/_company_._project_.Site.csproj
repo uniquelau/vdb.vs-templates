@@ -136,6 +136,6 @@
   </Target>
   -->
   <!-- vdb.Common.Project, handles build logic for Umbraco -->
-  <Import Project="_company_._project_.Web.targets" />
+  <Import Project="_company_._project_.Site.targets" />
   <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
