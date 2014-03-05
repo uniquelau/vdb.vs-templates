@@ -97,7 +97,7 @@
       SUMMARY :: Copy files from the 'output', into the web applications /Bin folder. This resolves issues with Visual Studio removing unreferenced DLL's (e.g. the Umbraco DLL's)
     -->
 	  <ItemGroup>
-		  <ProjectsOutput Include="{$TargetDir}*" />
+		  <ProjectsOutput Include="..\bin\*" />
 	  </ItemGroup>
 
 	  <Copy SourceFiles="@(ProjectsOutput)"	DestinationFolder="$(MSBuildProjectDirectory)\bin\%(RecursiveDir)" />
