@@ -9,7 +9,7 @@
 	</Target>
 
 	<!-- After Build -->
-	<Target Name="AfterBuild">
+	<Target Name="AfterBuild" DependsOnTargets="CopyBinaries">
 	</Target>
 
 </Project>

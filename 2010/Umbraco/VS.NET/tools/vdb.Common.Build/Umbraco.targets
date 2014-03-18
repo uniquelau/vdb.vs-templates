@@ -33,8 +33,8 @@
     <Folder Include="App_Plugins\" />
   </ItemGroup>
 
-	<!-- Umbraco Target -->
-	<Target Name="Umbraco">
+  <!-- Umbraco Target -->
+  <Target Name="Umbraco">
 		<!-- 
       SUMMARY :: Ensure all Umbraco application and user generated files are included in the build.
       WHAT :: Get all Umbraco files even when not included inside Visual Studio project (csproj).
@@ -96,6 +96,9 @@
     <!-- 
       SUMMARY :: Copy files from the 'output', into the web applications /Bin folder. This resolves issues with Visual Studio removing unreferenced DLL's (e.g. the Umbraco DLL's)
     -->
+
+</Target>
+<Target Name="CopyBinaries">
 	  <ItemGroup>
 		  <ProjectsOutput Include="..\bin\*" />
 	  </ItemGroup>
