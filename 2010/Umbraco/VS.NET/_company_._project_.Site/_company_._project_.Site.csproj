@@ -105,8 +105,8 @@
     <None Include="Properties\PublishProfiles\Staging.pubxml" />
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\_Layout.cshtml" />
-    <None Include="_company_._project_.Web.targets" />
-    <None Include="_company_._project_.Web.wpp.targets" />
+    <None Include="_company_._project_.Site.targets" />
+    <None Include="_company_._project_.Site.wpp.targets" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
