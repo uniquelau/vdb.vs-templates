@@ -6,9 +6,8 @@
 ._*
 .Spotlight-V100
 .Trashes
-Thumbs.db
-thumbs.db
-Desktop.ini
+[Tt]humbs.db
+[Ds]esktop.ini
 *.orig
 dwsync.xml
 .sass-cache/
@@ -26,7 +25,7 @@ dwsync.xml
 # NuGet Packages Directory
 #
 
-packages
+[Pp]ackages
 
  
 #
@@ -37,9 +36,6 @@ packages
 [Bb]uild/
 [Rr]elease/
 [Oo]bj/
-
-# When working with multiple visual studio projects
-# It's more reliable to build into one directory e.g. /output
  
 *.aps
 *.bak
