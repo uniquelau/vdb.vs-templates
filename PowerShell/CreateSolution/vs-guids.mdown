@@ -1,0 +1,44 @@
+# Guids
+
+## COMPANY.PROJECT.sln
+
+### Solution Guid
+
+    PROJECT("{_guid0_}")
+
+### PROJECT Guid
+
+    "{4D6695DD-4E33-4C37-A685-EF915C710953}"
+
+
+## COMPANY.PROJECT.Site.csproj
+
+### PROJECT Guid
+
+    <PROJECTGuid>{4D6695DD-4E33-4C37-A685-EF915C710953}</PROJECTGuid>
+
+## AssemblyInfo.cs
+
+	[assembly: Guid("cd26e15a-084d-4a52-8f00-75c34f461de6")]
+
+
+
+
+# Replacements
+
+GUID-0  
+
+GUID-1  
+GUID-1  
+
+GUID-2  
+GUID-2   
+
+GUID-3  
+GUID-3   
+
+Brute force support multiple PROJECTs by using a basic number suffix.
+
+# Notes
+
+If you open Visual Studio it will change the replacements to GUIDs automatically. This will prevent the find and replacement from working.
