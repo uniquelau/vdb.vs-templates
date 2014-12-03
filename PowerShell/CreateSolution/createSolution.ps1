@@ -77,10 +77,10 @@ foreach ($sc in Get-ChildItem -Path $TARGETDIR -Filter $Find -Recurse | where { 
 	}
 
 }
-exit
+
 # Create an array that contains all the folders that should be renamed
 Write-Host "Finding folders" -ForegroundColor Yellow
-$folders = Get-ChildItem -Filter $Find -recurse | Where-Object {$_.PSIsContainer -eq $True}  | Select-Object
+$folders = Get-ChildItem -Path $TARGETDIR -Filter $Find -recurse | Where-Object {$_.PSIsContainer -eq $True}  | Select-Object
 
 # Reverse the array - we need to deal with the deepest items first!
 if ($folders) {
@@ -93,6 +93,7 @@ if ($folders) {
         Rename-Item $folder.FullName $folder.Name.Replace('_company_._project_', "${COMPANY}.${PROJECT}")
     } 
 }
+
 
 # Import Manual CSV into $ReplacementList variable, this is a useful extension point
 $ReplacementList = Import-Csv $List;
@@ -120,7 +121,7 @@ if ($debug) {
 
 # Run through the files and update
 # TODO :: Support ignoring certain folders, e.g. Umbraco_Client & Umbraco
-Get-ChildItem -Recurse -Include $UpdateFiles | 
+Get-ChildItem -Path $TARGETDIR -Recurse -Include $UpdateFiles | 
 ForEach-Object {
 
     Write-Host "Updating - $_" -ForegroundColor DarkGreen
