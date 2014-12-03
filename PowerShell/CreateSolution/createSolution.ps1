@@ -137,5 +137,6 @@ ForEach-Object {
 #Open up the webpage to get the newest release
 (New-Object -Com Shell.Application).Open("http://our.umbraco.org/contribute/releases/")
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
-Write-Host "*`t`tYour project is now setup, please copy the newest umbraco files into the web foleder" -ForegroundColor Yellow
+Write-Host "*`Your project is now setup, please copy the newest umbraco files into the web folder" -ForegroundColor Yellow
+Write-Host "*`Do not override the log4net.config file" -ForegroundColor red
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
