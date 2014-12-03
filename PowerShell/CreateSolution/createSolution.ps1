@@ -1,5 +1,7 @@
 # Parameters 
 Param (
+    [Parameter(Mandatory=$true, HelpMessage="Please provide target directory (e.g. c:\projects\)")]
+    $TARGETDIR,
     [Parameter(Mandatory=$true, HelpMessage="You must provide a company name. (e.g. contoso)")]
     $COMPANY,
     [Parameter(Mandatory=$true, HelpMessage="You must provide a project name. (e.g. banking)")]
@@ -8,8 +10,9 @@ Param (
     $COMPANYFULLNAME,
     $List = "ReplacementList.csv",
     $Find = '*_company_._project_*' ,
-    $UpdateFiles = ('*.sln' , '*.csproj' , '*.cs' , '*.gitignore' , 'web.config' , 'web.*.config' , 'functions.js')
+    $UpdateFiles = ('*.sln' , '*.csproj' , '*.cs' , '*.gitignore' ,  '*.config' , 'functions.js')
 )
+
 
 # Function for YES / NO logic
 Function Ask-YesOrNo
@@ -25,12 +28,17 @@ switch ($nresult)
         1 {"Bye bye!" ; exit}
     }
 }
+#set target dir to full path
+$TARGETDIR = $TARGETDIR+"${COMPANY}.${PROJECT}"
+#Set source dir
+$SOURCEDIR = ".\2012\"
 
 # Welcome logic
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
 Write-Host "*`t`tAutomatic Visual Studio Solution Creation" -ForegroundColor Yellow
 Write-Host "*" -ForegroundColor Yellow
 Write-Host "*" -ForegroundColor Yellow -nonewline; Write-Host " Parameters"
+Write-Host "*" -ForegroundColor Yellow -nonewline; Write-Host " Target Dir (-TARGET):`t`t" -nonewline; Write-Host "$TARGETDIR" -ForegroundColor DarkGreen
 Write-Host "*" -ForegroundColor Yellow -nonewline; Write-Host " Company Name (-COMPANY):`t`t" -nonewline; Write-Host "$COMPANY" -ForegroundColor DarkGreen
 Write-Host "*" -ForegroundColor Yellow -nonewline; Write-Host " Project Name (-PROJECT):`t`t" -nonewline; Write-Host "$PROJECT" -ForegroundColor DarkGreen
 Write-Host "*" -ForegroundColor Yellow -nonewline; Write-Host " Full Name (-COMPANYFULLNAME):`t`t" -nonewline; Write-Host "$COMPANYFULLNAME" -ForegroundColor DarkGreen
@@ -42,10 +50,25 @@ Write-Host "**********************************************************" -Foregro
 Ask-YesOrNo
 if ($nresult -eq "$false") {exit}
 
+
+#Create target dir
+if (-not (test-path $TARGETDIR ) ) {
+    write-host "$TARGETDIR  oesn't exist, creating it" -ForegroundColor Magenta
+    md $TARGETDIR |out-null
+} else {
+    write-host $TARGETDIR  " exists, no need to create it" -ForegroundColor DarkGreen
+}
+
+#Copy source into target dir
+write-host "Copying files" -ForegroundColor DarkGreen
+cmd /c robocopy.exe $SOURCEDIR ${TARGETDIR} /e /nfl /ndl /njh /r:100 /w:1
+
+
+
 # Rename files, that match $Find
 Write-Host "Renaming matched files" -ForegroundColor Yellow
 
-foreach ($sc in Get-ChildItem -Filter $Find -Recurse | where { test-path $_.fullname -pathtype leaf} ) {
+foreach ($sc in Get-ChildItem -Path $TARGETDIR -Filter $Find -Recurse | where { test-path $_.fullname -pathtype leaf} ) {
 	
     Write-Host "Found $sc" -ForegroundColor DarkGreen
 	
@@ -54,7 +77,7 @@ foreach ($sc in Get-ChildItem -Filter $Find -Recurse | where { test-path $_.full
 	}
 
 }
-
+exit
 # Create an array that contains all the folders that should be renamed
 Write-Host "Finding folders" -ForegroundColor Yellow
 $folders = Get-ChildItem -Filter $Find -recurse | Where-Object {$_.PSIsContainer -eq $True}  | Select-Object
