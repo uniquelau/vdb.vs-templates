@@ -133,3 +133,9 @@ ForEach-Object {
     }
     Set-Content -Path $_.FullName -Value $Content
 }
+
+#Open up the webpage to get the newest release
+(New-Object -Com Shell.Application).Open("http://our.umbraco.org/contribute/releases/")
+Write-Host "`n**********************************************************" -ForegroundColor Yellow
+Write-Host "*`t`tYour project is now setup, please copy the newest umbraco files into the web foleder" -ForegroundColor Yellow
+Write-Host "`n**********************************************************" -ForegroundColor Yellow
