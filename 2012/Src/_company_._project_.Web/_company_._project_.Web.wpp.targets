@@ -1,0 +1,10 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<!-- Propertys -->
+	<Import Project="../tools/vdb.Common.Build/MSDeploy.Global.Umbraco.props" />
+
+	<!-- Tasks -->
+	<Import Project="../tools/vdb.Common.Build/MSDeploy.Global.tasks" />
+	<Import Project="../tools/vdb.Common.Build/MSDeploy.Debug.tasks" Condition="$(Configuration)=='Debug'"/>
+
+</Project>
