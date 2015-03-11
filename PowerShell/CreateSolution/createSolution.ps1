@@ -33,6 +33,7 @@ $TARGETDIR = $TARGETDIR+"${COMPANY}.${PROJECT}"
 #Set source dir
 $SOURCEDIR = ".\2012\"
 
+
 # Welcome logic
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
 Write-Host "*`t`tAutomatic Visual Studio Solution Creation" -ForegroundColor Yellow
@@ -96,7 +97,9 @@ if ($folders) {
 
 
 # Import Manual CSV into $ReplacementList variable, this is a useful extension point
-$ReplacementList = Import-Csv $List;
+$scriptPath = split-path -parent $MyInvocation.MyCommand.Definition 
+$relativeList = $scriptPath + "\" + $List
+$ReplacementList = Import-Csv $RelativeList;
 
 # Handle replacements from our this Powershell's params
 $_Company = New-Object PsObject -Property @{ OldValue = '_company_' ; NewValue = $COMPANY }
