@@ -66,3 +66,10 @@ dwsync.xml
 *_i.c
 *_p.c
 .builds
+
+#
+# Gulp / Node / Bower
+#
+
+node_modules/
+bower_components/
