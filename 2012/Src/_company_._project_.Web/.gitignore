@@ -19,9 +19,10 @@
 [Aa]pp_[Dd]ata/courier/cache/*
 [Aa]pp_[Dd]ata/courier/revisions/*
 [Aa]pp_[Dd]ata/justDelete_*
-[Aa]pp_[Dd]ata/NuGetBackups
+[Aa]pp_[Dd]ata/NuGetBackup
 [Aa]pp_[Dd]ata/Preview/*
 [Aa]pp_[Dd]ata/_systemUmbracoIndexDontDelete/*
+[Aa]pp_[Dd]ata/cache
 
 # Log files
 
