@@ -1,0 +1,31 @@
+﻿@model _company_._project_.Logic.Model.Interfaces.IMeta
+
+@{
+	var metaImage = "";
+	var url = HttpContext.Current.Request.Url.Host;
+	if (Model.SocialImage != null)
+	{
+		metaImage = "http://" + url + Model.SocialImage.UmbracoFile;
+	}
+}
+
+<meta name="description" content="@Model.MetaDescription" />
+@if (Model.MetaKeywords != string.Empty)
+{
+<meta name="keywords" content="@Model.MetaKeywords" />
+}
+
+<meta property="og:type" content="@Model.OgType" />
+<meta property="og:title" content="@Model.SocialTitle" />
+<meta property="og:description" content="@Model.SocialDescription" />
+
+@if (metaImage != string.Empty)
+{
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image:src" content="@metaImage" />
+	<meta property="og:image" content="@metaImage" />
+}
+else
+{
+	<meta name="twitter:card" value="summary" />
+}
