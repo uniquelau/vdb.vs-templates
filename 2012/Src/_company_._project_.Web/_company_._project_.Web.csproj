@@ -127,7 +127,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\functions.js" />
+    <Content Include="Scripts\app.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -135,7 +135,11 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Views\Web.config" />
+    <None Include="Views\Web.config" />
+    <Content Include="Css\Sass\screen.sass" />
+    <Content Include="Views\_Layout.cshtml" />
+    <Content Include="Views\Article.cshtml" />
+    <Content Include="Views\Partials\Meta.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -172,6 +176,7 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="_company_._project_.web.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
