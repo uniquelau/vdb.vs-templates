@@ -1,0 +1,38 @@
+﻿@using _company_._project_.Logic.Model.Interfaces
+@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@(((IMeta)Model.Content).MetaTitle)</title>
+	@if (Model.Content is IMeta)
+	{
+		@Html.Partial("Meta", Model.Content)
+	}
+	@if (Context.IsDebuggingEnabled)
+	{
+		<!-- build:css(.) -->
+		<link href="/Css/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<!-- endbuild -->
+	}
+	 else
+	{
+		<link href="~/Css/minified.css" media="screen, projection" rel="stylesheet" type="text/css" />
+	}
+</head>
+	<body>
+		@RenderBody()
+		@if (!Context.IsDebuggingEnabled)
+		{
+			<!-- build:js(.) -->	
+			<script src="/scripts/app.js"></script>
+			<!-- endbuild -->
+		}
+		else
+		{
+			<script src="~/Scripts/minified.js"></script>
+		}
+	</body>
+</html>
