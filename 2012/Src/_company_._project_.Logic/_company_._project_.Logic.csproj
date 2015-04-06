@@ -188,7 +188,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Content\Base.cs" />
+	<Compile Include="Model\Extensions\TypeExtensions.cs" />    
+	<Compile Include="Model\Handlers\SetPublishedContentModelFactory.cs" />
     <Compile Include="Model\Content\BaseContentType.cs" />
     <Compile Include="Model\Interfaces\IMeta.cs" />
     <Compile Include="Model\Media\Image.cs" />
