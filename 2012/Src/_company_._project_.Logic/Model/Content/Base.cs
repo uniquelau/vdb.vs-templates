@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Umbraco.Core.Models;
 using Umbraco.Web;
 
 namespace _company_._project_.Logic.Model.Content
 {
-    public class Base : BaseContentType
+    public class Base : BaseContentType, IMeta
     {
-        public Base(IPublishedContent content) : base(content)
+	using Interfaces;
+	using Media;
+
+	public Base(IPublishedContent content) : base(content)
         {
         }
 
@@ -42,13 +41,30 @@ namespace _company_._project_.Logic.Model.Content
             }
         }
 
-        public string MetaKeywords
-        {
-            get
-            {
-                return this.GetPropertyValue<string>("metaKeywords");
-            }
-        }
+				public string SocialTitle
+				{
+						get
+						{
+								return this.GetPropertyValue<string>("socialTitle");
+						}
+				}
+
+				public string SocialDescription
+				{
+						get
+						{
+								return this.GetPropertyValue<string>("socialDescription");
+						}
+				}
+
+				public Image SocialImage
+				{
+						get
+						{
+								var ctn = GetMediaByProperty("teaserImage");
+								return ctn != null ? new Image(ctn) : null;
+						}
+				}
 
         public bool SiteMapExclude
         {
@@ -58,7 +74,20 @@ namespace _company_._project_.Logic.Model.Content
             }
         }
 
-
         #endregion
+
+				#region IMeta
+
+				string IMeta.MetaTitle { get { return this.MetaTitle; } }
+				string IMeta.MetaDescription { get { return this.MetaDescription; } }
+				string IMeta.SocialTitle { get { return this.SocialTitle; } }
+				string IMeta.SocialDescription { get { return this.SocialDescription; } }
+				Image IMeta.SocialImage { get { return this.SocialImage; } }
+				bool IMeta.SiteMapExclude { get { return this.SiteMapExclude; } }
+
+				string IMeta.OgType { get { return "og:article"; } }
+
+				#endregion
+
     }
 }
