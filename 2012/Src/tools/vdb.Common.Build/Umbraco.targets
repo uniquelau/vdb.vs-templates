@@ -33,6 +33,13 @@
     <Folder Include="App_Plugins\" />
   </ItemGroup>
 
+  <!-- Media Target -->
+  <Target Name="Media">
+    <CreateItem Include="media\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+  </Target>
+
   <!-- Umbraco Target -->
   <Target Name="Umbraco">
 		<!-- 
@@ -51,9 +58,6 @@
       <Output ItemName="Content" TaskParameter="Include" />
     </CreateItem>
     <CreateItem Include="masterpages\**\*.master">
-      <Output ItemName="Content" TaskParameter="Include" />
-    </CreateItem>
-    <CreateItem Include="media\**\*.*">
       <Output ItemName="Content" TaskParameter="Include" />
     </CreateItem>
     <CreateItem Include="usercontrols\**\*.ascx">
