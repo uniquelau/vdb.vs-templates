@@ -5,7 +5,7 @@
 	<Import Project="../tools/vdb.Common.Build/Minify.tasks" />
 
 	<!-- Hook into BeforeBuild and ensure the ABOVE Targets run (DependsOnTargets)-->
-	<Target Name="BeforeBuild" DependsOnTargets="Umbraco">
+	<Target Name="BeforeBuild" DependsOnTargets="Umbraco; Media">
 	</Target>
 
 	<!-- After Build -->
