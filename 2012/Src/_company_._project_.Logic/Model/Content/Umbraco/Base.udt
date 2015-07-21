@@ -32,7 +32,7 @@
       <Tab>Meta</Tab>
       <Mandatory>False</Mandatory>
       <Validation />
-      <Description><![CDATA[Google displays the first 50-60 characters, try to keep you titles below 55. ]]></Description>
+      <Description><![CDATA[Google displays the first 50-60 characters, try to keep your titles below 55. ]]></Description>
     </GenericProperty>
     <GenericProperty>
       <Name>Description</Name>
