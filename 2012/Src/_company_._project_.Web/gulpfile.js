@@ -68,11 +68,10 @@ gulp.task('default', ['styles', 'cssmin', 'jsmin', 'watch']);
  * Visual Studio Hooks for Debug and Release Configurations
  */
 
-gulp.task('build-Debug', ['cssmin', 'jsmin']);
+gulp.task('build-Debug', ['styles', 'cssmin', 'jsmin']);
 
-gulp.task('build-Release', ['cssmin', 'jsmin']);
+gulp.task('build-Release', ['styles' , 'cssmin', 'jsmin']);
 
-gulp.task('build-Staging', ['cssmin', 'jsmin']);
 
 /**
  * Delete generated files

@@ -6,6 +6,10 @@
 
 	<!-- Hook into BeforeBuild and ensure the ABOVE Targets run (DependsOnTargets)-->
 	<Target Name="BeforeBuild" DependsOnTargets="Umbraco; Media">
+		<!-- Run Gulp Tasks specific to Project build mode e.g. Debug/Release --> 
+		<PropertyGroup>
+			<GulpBuildTask>build-$(Configuration)</GulpBuildTask>
+		</PropertyGroup>
 	</Target>
 
 	<!-- After Build -->
