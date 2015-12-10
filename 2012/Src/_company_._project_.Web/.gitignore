@@ -8,6 +8,7 @@
 # DLL's created by projects within the solution
 
 [Bb]in/_company_._project_.*.dll
+[Bb]in/_company_._project_.*.dll.config
 
 # Data folders/files
 [Aa]pp_[Bb]rowsers/*
