@@ -1,6 +1,6 @@
-var _company_._project_ = _company_._project_ || {};
+var _company__project_ = _company__project_ || {};
 
-_company_._project_.Example = _company_._project_.Example || (function () {
+_company__project_.Example = _company__project_.Example || (function () {
     //Form validations
     function initExample() {
         if (1 == 1) {
@@ -13,5 +13,5 @@ _company_._project_.Example = _company_._project_.Example || (function () {
 }());
 
 $(document).ready(function () {
-    window._company_._project_.Example.initExample();
+    window._company__project_.Example.initExample();
 });

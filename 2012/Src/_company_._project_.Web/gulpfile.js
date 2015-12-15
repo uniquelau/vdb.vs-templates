@@ -23,7 +23,7 @@ gulp.task('watch', function () {
  * Compile SASS to CSS
  */
 gulp.task('styles', function () {
-		return gulp.src('Css/sass/screen.scss')
+		return gulp.src('Css/sass/styles.scss')
 			.pipe(plugins.plumber())
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.sass({
@@ -41,7 +41,7 @@ gulp.task('styles', function () {
 gulp.task('jsmin', function () {
 	return gulp.src('Views/_Layout.cshtml')
 		.pipe(plugins.readmin({type: 'js'}))
-		.pipe(plugins.concat('scripts.min.js'))
+		.pipe(plugins.concat('minified.js'))
 		.pipe(plugins.uglify())
 		.pipe(gulp.dest('scripts'));
 });
@@ -52,7 +52,7 @@ gulp.task('jsmin', function () {
 gulp.task('cssmin', function () {
 	return gulp.src('Views/_Layout.cshtml')
 		.pipe(plugins.readmin({type: 'css'}))
-		.pipe(plugins.concat('styles.min.css'))
+		.pipe(plugins.concat('minified.css'))
 		.pipe(plugins.minifyCss())
 		.pipe(gulp.dest('css'));
 });
@@ -70,7 +70,7 @@ gulp.task('default', ['styles', 'cssmin', 'jsmin', 'watch']);
 
 gulp.task('build-Debug', ['styles', 'cssmin', 'jsmin']);
 
-gulp.task('build-Release', ['styles' , 'cssmin', 'jsmin']);
+gulp.task('build-Release', ['clean' , 'styles' , 'cssmin', 'jsmin']);
 
 
 /**
@@ -78,8 +78,8 @@ gulp.task('build-Release', ['styles' , 'cssmin', 'jsmin']);
  */
 gulp.task('clean', function (cb) {
 	try {
-		fs.unlinkSync('css/styles.min.css');
-		fs.unlinkSync('scripts/scripts.min.js');
+		fs.unlinkSync('css/minified.css');
+		fs.unlinkSync('scripts/minified.js');
 	} catch (err) {
 		//do nothing
 	}
