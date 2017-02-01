@@ -47,7 +47,7 @@ if ($nresult -eq "$false") {exit}
 
 #Create target dir
 if (-not (test-path $TARGETDIR ) ) {
-    write-host "$TARGETDIR  oesn't exist, creating it" -ForegroundColor Magenta
+    write-host "$TARGETDIR  doesn't exist, creating it" -ForegroundColor Magenta
     md $TARGETDIR |out-null
 } else {
     write-host $TARGETDIR  " exists, no need to create it" -ForegroundColor DarkGreen
