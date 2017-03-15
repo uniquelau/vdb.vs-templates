@@ -126,8 +126,9 @@
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\Partials\Meta.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Content Include="robots.Release.txt" />
+    <Content Include="robots.txt" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

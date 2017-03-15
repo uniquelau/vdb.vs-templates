@@ -1,0 +1,3 @@
+# Robots can index away! 
+User-agent: *
+Disallow:
