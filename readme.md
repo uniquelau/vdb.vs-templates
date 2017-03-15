@@ -6,6 +6,12 @@ to Azure. The build tasks also handle the automatic deployment of files required
 to run Umbraco. This means that you do not need to include every file within the
 Visual Studio project.
 
+## Security Best Practices
+
+[web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Web.Release.config)
+[urlrewrite useful outboundRules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Config/RewriteOutboundRules.config)
+[urlrewite useful rules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Config/RewriteRules.config)
+
 ## Prerequisites
 
 Windows
