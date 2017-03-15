@@ -132,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Config\log4net.config" />
+    <Content Include="Config\RewriteMaps.config" />
+    <Content Include="Config\RewriteOutboundRules.config" />
+    <Content Include="Config\RewriteRules.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
