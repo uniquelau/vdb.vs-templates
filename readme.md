@@ -63,3 +63,12 @@ Project uses a common directory for binairies which are used for build.
 Package DLL's from any project are copied into this directory.
 On a successful build these are then copied into the Web project.
 This avoids issues with missing DLL's when deploying the project. 
+
+## Useful Resources
+
+### SSL
+
+[Security Headers Test](https://securityheaders.io/)
+[Qualys SSL Test](https://www.ssllabs.com/ssltest/)
+[TomSSL - Article - How to Fix HTTP Response Header...](https://tomssl.com/2016/06/30/how-to-fix-the-http-response-headers-on-azure-web-apps-to-get-an-a-plus-on-securityheaders-io/)
+
