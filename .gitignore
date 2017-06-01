@@ -27,6 +27,11 @@ dwsync.xml
 
 packages
 
+#
+# Webstorm
+#
+
+.idea/
  
 #
 # Visual Studio
