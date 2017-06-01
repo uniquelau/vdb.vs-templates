@@ -36,6 +36,7 @@ dwsync.xml
 [Bb]uild/
 [Rr]elease/
 [Oo]bj/
+.vs/
  
 *.aps
 *.bak
