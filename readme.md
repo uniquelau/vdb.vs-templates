@@ -62,7 +62,12 @@ Acne.Site
 Project uses a common directory for binairies which are used for build.
 Package DLL's from any project are copied into this directory.
 On a successful build these are then copied into the Web project.
-This avoids issues with missing DLL's when deploying the project. 
+This avoids issues with missing DLL's when deploying the project.
+
+## Features
+
+1. robots.txt - Indexing is automatically disabled when not on production domain.
+2.
 
 ## Useful Resources
 

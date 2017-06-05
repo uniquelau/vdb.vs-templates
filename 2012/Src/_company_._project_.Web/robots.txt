@@ -1,3 +1,6 @@
-# Do not index site (site url != production)
+# The site will not be indexed when on Production domain
+# See: \config\RewritesRules.config
+# By default the site will not be indexed when deployed to *.azurewebsites.net
+
 User-agent: *
 Disallow: /
