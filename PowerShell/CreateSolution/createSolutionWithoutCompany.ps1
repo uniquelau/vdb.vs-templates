@@ -1,12 +1,12 @@
 # Parameters 
 Param (
-    [Parameter(Mandatory=$true, HelpMessage="Please provide target directory (e.g. c:\projects\)")]
+    [Parameter(Mandatory=$true, HelpMessage="Your target directory should contain a trailing slash (e.g. c:\projects\) ")]
     $TARGETDIR,
-    [Parameter(Mandatory=$true, HelpMessage="You must provide a project name. (e.g. banking)")]
+    [Parameter(Mandatory=$true, HelpMessage="You must provide a project name. (e.g. banking). This becomes the solution folder.")]
     $PROJECT,
     $List = "ReplacementList.csv",
     $Find = '*_company_._project_*' ,
-    $UpdateFiles = ('*.sln' , '*.csproj' , '*.cs' , '*.gitignore' ,  '*.config' , 'app.js' , 'package.json')
+    $UpdateFiles = ('*.asax' , '*.sln' , '*.csproj' , '*.cs' , '*.gitignore' ,  '*.config' , 'app.js' , 'package.json')
 )
 
 
@@ -27,7 +27,7 @@ switch ($nresult)
 #set target dir to full path
 $TARGETDIR = $TARGETDIR+"${PROJECT}"
 #Set source dir
-$SOURCEDIR = ".\2012\"
+$SOURCEDIR = ".\2015\"
 
 # Welcome logic
 Write-Host "`n**********************************************************" -ForegroundColor Yellow

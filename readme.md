@@ -8,14 +8,16 @@ Visual Studio project.
 
 ## Security Best Practices
 
-[web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Web.Release.config)
-[urlrewrite useful outboundRules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Config/RewriteOutboundRules.config)
-[urlrewite useful rules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2012/Src/_company_._project_.Web/Config/RewriteRules.config)
+[web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Web.Release.config)
+[urlrewrite useful outboundRules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteOutboundRules.config)
+[urlrewite useful rules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteRules.config)
 
 ## Prerequisites
 
 Windows
 Visual Studio
+Node.js
+Npm
 
 ## Usage
 
@@ -31,11 +33,12 @@ c:\git\Acne.Site\ - Project Folder
 
 Acne.Site
 + Src
-+ + Acne.Site.Logic - Business Logic folder, include Umbraco Core CMS Binaries
++ + Acne.Site.Logic - Business Logic folder, including Umbraco Core CMS Binaries
 + + Acne.Site.Web - Served Website folder
 
-
-6. Download the latest Umbraco version (the webpage will automatically open)
+6. This is a great time to make a Git Commit.
+7. Next, download the latest Umbraco version (the webpage will automatically open)
+8. Extract the files into the 'Web' directory
 7. Open the Visual Studio Solution (Acne.Site.sln)
 8. Open the Nuget Package Manager, and set the Project to 'Logic'
 9. Run 'Install-Package UmbracoCms.Core'
@@ -53,21 +56,26 @@ Acne.Site
 5. Extract and copy files into 'Web' project
 6. Use a good merge tool to handle file merges
 7. Stage and Commit files (suggestion: merge files directory by directory, e.g. root, config, etc)
-8. Run Visaul Studio project
+8. Run Visual Studio project
 9. Build solution
 10. Git Commit
 
 ## Notes
 
-Project uses a common directory for binairies which are used for build.
+Project uses a common directory for binaries which are used for build.
 Package DLL's from any project are copied into this directory.
 On a successful build these are then copied into the Web project.
 This avoids issues with missing DLL's when deploying the project.
 
+## Known issues
+
+1. Robocopy will fail if `node_modules` if present. Use `rimraf` to remove.
+
+When installing you have full control over the version of Umbraco you wish to use.
+
 ## Features
 
 1. robots.txt - Indexing is automatically disabled when not on production domain.
-2.
 
 ## Useful Resources
 
