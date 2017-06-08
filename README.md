@@ -19,16 +19,16 @@ Visual Studio project.
 
 ## Security Best Practices
 
-[web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Web.Release.config)
-[urlrewrite useful outboundRules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteOutboundRules.config)
-[urlrewite useful rules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteRules.config)
+[web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Web.Release.config)  
+[urlrewrite useful outboundRules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteOutboundRules.config)  
+[urlrewite useful rules](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Config/RewriteRules.config)  
 
 ## Prerequisites
 
-Windows
-Visual Studio
-Node.js
-Npm
+Windows  
+Visual Studio  
+Node.js  
+Npm  
 
 ## Usage
 
@@ -42,19 +42,19 @@ This will create the following: `c:\git\Acne.Site\`
 
 This will contain:
 
-+ `Src\`
-++ `Acne.Site.Logic\` - Business Logic (e.g. POCO's, Helpers, Services)
-++ `Acne.Site.Web\` - Served Website
++ `Src\`  
+++ `Acne.Site.Logic\` - Business Logic (e.g. POCO's, Helpers, Services)  
+++ `Acne.Site.Web\` - Served Website  
 
 6. This is a great time to make a Git Commit.
 
 ## Next setup Umbraco!
 
-1. Run the Visual Studio Solution  (should open automagically)
-2. Open the Nuget Package Manager, and set the Project to 'Web'
-3. Run `Install-Package UmbracoCms`
-4. Open the Nuget Package Manager, and set the Project to 'Logic'
-5. Run `Install-Package UmbracoCms.Core`
+1. Run the Visual Studio Solution  (should open automagically)  
+2. Open the Nuget Package Manager, and set the Project to 'Web'  
+3. Run `Install-Package UmbracoCms`  
+4. Open the Nuget Package Manager, and set the Project to 'Logic'  
+5. Run `Install-Package UmbracoCms.Core`  
 
 ## Upgrades
 
@@ -88,7 +88,7 @@ This avoids issues with missing DLL's when rebuilding and deploying the project.
 
 ### SSL
 
-[Security Headers Test](https://securityheaders.io/)
-[Qualys SSL Test](https://www.ssllabs.com/ssltest/)
-[TomSSL - Article - How to Fix HTTP Response Header...](https://tomssl.com/2016/06/30/how-to-fix-the-http-response-headers-on-azure-web-apps-to-get-an-a-plus-on-securityheaders-io/)  
+[Security Headers Test](https://securityheaders.io/)  
+[Qualys SSL Test](https://www.ssllabs.com/ssltest/)  
+[TomSSL - Article - How to Fix HTTP Response Header...](https://tomssl.com/2016/06/30/how-to-fix-the-http-response-headers-on-azure-web-apps-to-get-an-a-plus-on-securityheaders-io/)    
 
