@@ -11,6 +11,12 @@ to Azure. The build tasks also handle the automatic deployment of files required
 to run Umbraco. This means that you do not need to include every file within the
 Visual Studio project.
 
+## Why
+
+1. Use the same starting point for all your projects
+2. Contains sensible gitignore files
+3. Automatically handles renaming and GUID replacement  
+
 ## Security Best Practices
 
 [web.config transform](https://github.com/uniquelau/vdb.vs-templates/blob/master/2015/Src/_company_._project_.Web/Web.Release.config)
