@@ -1,7 +1,12 @@
 # Readme
 
-This project creates a Visual Studio solution, that uses strongly typed Models
-and build tasks that ensure that permissions (ACL's) are correctly set when deploying
+This project aims to:
+
+Creates a fresh Visual Studio solution that contains a Web and Logic project Umbraco.
+Give a good starting point for creating your own template, feel free to fork!
+
+In this example we create some scaffolding for strongly typed Models and include
+build tasks that ensure that permissions (ACL's) are correctly set when deploying
 to Azure. The build tasks also handle the automatic deployment of files required
 to run Umbraco. This means that you do not need to include every file within the
 Visual Studio project.
@@ -40,7 +45,7 @@ Acne.Site
 
 ## Next setup Umbraco!
 
-1. Run the Visual Studio Solution
+1. Run the Visual Studio Solution  (should open automagically)
 2. Open the Nuget Package Manager, and set the Project to 'Web'
 3. Run `Install-Package UmbracoCms`
 4. Open the Nuget Package Manager, and set the Project to 'Logic'
