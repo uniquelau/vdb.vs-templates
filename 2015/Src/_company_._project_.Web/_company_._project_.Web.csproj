@@ -70,8 +70,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Css\Sass\styles.scss" />
-    <Content Include="Global.asax" />
+    <None Include="gulpfile.js" />
     <Content Include="Scripts\app.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\log4net.config" />
+    <Content Include="Config\RewriteMaps.config" />
+    <Content Include="Config\RewriteOutboundRules.config" />
+    <Content Include="Config\RewriteRules.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="robots.Release.txt" />
+    <Content Include="robots.txt" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -79,20 +91,12 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Views\Web.config" />
     <Content Include="Views\_Layout.cshtml" />
     <Content Include="Views\Article.cshtml" />
     <Content Include="Views\Partials\Meta.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="robots.Release.txt" />
-    <Content Include="robots.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Config\log4net.config" />
-    <Content Include="Config\RewriteMaps.config" />
-    <Content Include="Config\RewriteOutboundRules.config" />
-    <Content Include="Config\RewriteRules.config" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

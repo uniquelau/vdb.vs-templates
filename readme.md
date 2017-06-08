@@ -37,41 +37,38 @@ Acne.Site
 + + Acne.Site.Web - Served Website folder
 
 6. This is a great time to make a Git Commit.
-7. Next, download the latest Umbraco version (the webpage will automatically open)
-8. Extract the files into the 'Web' directory
-7. Open the Visual Studio Solution (Acne.Site.sln)
-8. Open the Nuget Package Manager, and set the Project to 'Logic'
-9. Run 'Install-Package UmbracoCms.Core'
-10. The Project will now use the latest Umbraco binaries.
-11. Next we copy the Umbraco files you downloaded earlier into the Web project
-12. Run and Configure Umbraco :-)
+
+## Next setup Umbraco!
+
+1. Run the Visual Studio Solution
+2. Open the Nuget Package Manager, and set the Project to 'Web'
+3. Run `Install-Package UmbracoCms`
+4. Open the Nuget Package Manager, and set the Project to 'Logic'
+5. Run `Install-Package UmbracoCms.Core`
 
 ## Upgrades
 
+Firstly see: [Our Umbraco - Upgrades in General](https://our.umbraco.org/documentation/getting-started/setup/upgrading/general)
+
 1. Git Commit
-2. Run 'Install-Package UmbracoCms.Core' in 'Logic' project
-3. Quit Visual Studio
-4. Delete the project bin directory 'src\bin' this is created on each build
-4. Download latest version of [Umbraco](https://our.umbraco.org/contribute/releases/)
-5. Extract and copy files into 'Web' project
-6. Use a good merge tool to handle file merges
-7. Stage and Commit files (suggestion: merge files directory by directory, e.g. root, config, etc)
-8. Run Visual Studio project
-9. Build solution
-10. Git Commit
+2. Delete the shared build directory `src\bin` to ensure the old binaries are not copied back into your web project
+3. In Visual Studio using the Package Manager Console run `Install-Package UmbracoCms.Core` in *Logic* project
+4. In Visual Studio using the Package Manager Console run `Install-Package UmbracoCms` in *Web* project
+5. Review your conflicts using a good merge tool (SmartGit or BeyondCompare)
+6. Stage and Commit files (tip: merge files directory by directory, e.g. first the root, then config, etc)
+7. Build solution
+8. Git Commit
 
 ## Notes
 
 Project uses a common directory for binaries which are used for build.
 Package DLL's from any project are copied into this directory.
 On a successful build these are then copied into the Web project.
-This avoids issues with missing DLL's when deploying the project.
+This avoids issues with missing DLL's when rebuilding and deploying the project.
 
 ## Known issues
 
 1. Robocopy will fail if `node_modules` if present. Use `rimraf` to remove.
-
-When installing you have full control over the version of Umbraco you wish to use.
 
 ## Features
 

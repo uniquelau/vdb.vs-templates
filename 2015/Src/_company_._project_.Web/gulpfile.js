@@ -1,6 +1,7 @@
+/// <binding BeforeBuild='build' Clean='clean' ProjectOpened='default' />
 var gulp = require('gulp'),
-	fs = require('fs'),
-	loadPlugins = require('gulp-load-plugins');
+    fs = require('fs'),
+    loadPlugins = require('gulp-load-plugins');
 
 var plugins = loadPlugins();
 
@@ -13,9 +14,9 @@ gulp.task('watch', function () {
     plugins.livereload.listen();
     gulp.watch('Css/sass/**/*.scss', ['styles']);
     gulp.watch([
-		'Css/*.css',
-		'Scripts/**/*.js',
-		'Views/**/*.cshtml'
+        'Css/*.css',
+        'Scripts/**/*.js',
+        'Views/**/*.cshtml'
     ]).on('change', plugins.livereload.changed);
 });
 
@@ -35,22 +36,6 @@ gulp.task('styles', function () {
         .pipe(gulp.dest('Css'));
 });
 
-/**
- * Compile SASS to CSS for use in Umbraco Backoffice
- */
-gulp.task('styles-umbraco', function () {
-    return gulp.src('Css/sass/umbraco.scss')
-        .pipe(plugins.plumber())
-        .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sass({
-            errLogToConsole: true
-        }))
-        .pipe(plugins.autoprefixer())
-        .pipe(plugins.sourcemaps.write())
-        .pipe(gulp.dest('Css'));
-});
-
-
 
 /**
  * Load scripts from build:js block in template and minify
@@ -58,21 +43,23 @@ gulp.task('styles-umbraco', function () {
 gulp.task('jsmin', function () {
     return gulp.src('Views/_Layout.cshtml')
         .pipe(plugins.readmin({ type: 'js' }))
-		.pipe(plugins.concat('minified.js'))
-		.pipe(plugins.uglify())
-		.pipe(gulp.dest('scripts'));
+        .pipe(plugins.concat('minified.js'))
+        .pipe(plugins.uglify())
+        .pipe(gulp.dest('scripts'));
 });
+
 
 /**
  * Load styles from build:css block in template and minify
  */
 gulp.task('cssmin', function () {
     return gulp.src('Views/_Layout.cshtml')
-		.pipe(plugins.readmin({ type: 'css' }))
-		.pipe(plugins.concat('minified.css'))
-		.pipe(plugins.cssnano())
-		.pipe(gulp.dest('css'));
+        .pipe(plugins.readmin({ type: 'css' }))
+        .pipe(plugins.concat('minified.css'))
+        .pipe(plugins.cssnano())
+        .pipe(gulp.dest('css'));
 });
+
 
 /**
  * Default task
@@ -81,17 +68,10 @@ gulp.task('default', ['styles', 'cssmin', 'jsmin', 'watch']);
 
 
 /**
- * Visual Studio Hooks for Debug and Release Configurations
+ * Build
  */
+gulp.task('build', ['clean', 'styles', 'cssmin', 'jsmin']);
 
-gulp.task('build-Debug', ['styles', 'cssmin', 'jsmin']);
-
-gulp.task('build-Release', ['clean', 'styles', 'cssmin', 'jsmin']);
-
-/**
-* Umbraco CSS work
-*/
-gulp.task('umbraco', ['styles-umbraco', 'watch']);
 
 
 /**

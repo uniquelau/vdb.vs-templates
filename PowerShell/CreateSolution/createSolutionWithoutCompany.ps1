@@ -6,7 +6,7 @@ Param (
     $PROJECT,
     $List = "ReplacementList.csv",
     $Find = '*_company_._project_*' ,
-    $UpdateFiles = ('*.asax' , '*.sln' , '*.csproj' , '*.cs' , '*.gitignore' ,  '*.config' , 'app.js' , 'package.json')
+    $UpdateFiles = ('app.js' , '*.asax' , '*.csproj' , '*.cs' , '*.cshtml', '*.config' , '*.gitignore' , '*.md' , 'package.json' , '*.sln')
 )
 
 
@@ -127,9 +127,15 @@ ForEach-Object {
     Set-Content -Path $_.FullName -Value $Content
 }
 
-#Open up the webpage to get the newest release
-(New-Object -Com Shell.Application).Open("http://our.umbraco.org/contribute/releases/")
+# Open Solution
+Invoke-Item $TARGETDIR\src\${PROJECT}.sln
+
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
-Write-Host "*`Your project is now setup, please copy the newest umbraco files into the web folder" -ForegroundColor Yellow
-Write-Host "*`Do not override the log4net.config file" -ForegroundColor red
+Write-Host "*`Your project is now setup." -ForegroundColor Yellow
+Write-Host "*`Please run the Visual Studio solution." -ForegroundColor Yellow
+Write-Host "*`Next install UmbracoCms using NuGet into the Web project." -ForegroundColor Yellow
+Write-Host "*`Next install UmbracoCms.Core using NuGet into the Logic project." -ForegroundColor Yellow
+Write-Host "*`See the README file for more details." -ForegroundColor Yellow
+Write-Host "*`Tip: Do not override the log4net.config file" -ForegroundColor red
+Write-Host "*`Tip: Now is a good time to make your initial Git commit!" -ForegroundColor red
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
