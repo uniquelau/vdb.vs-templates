@@ -15,7 +15,7 @@ Visual Studio project.
 
 1. Use the same starting point for all your projects
 2. Contains sensible gitignore files
-3. Automatically handles renaming and GUID replacement  
+3. Automatically handles renaming and GUID replacement
 
 ## Security Best Practices
 
@@ -32,20 +32,19 @@ Npm
 
 ## Usage
 
-1. Run 'Create Visual Studio Project.bat'
-2. Enter directory - e.g. c:\git\
-3. Enter company - e.g. Acne
-4. Enter project - e.g. Site
-5. Enter full project name - e.g. Acne Inc.
+1. Run `Create Visual Studio Project.bat`
+2. Enter directory - `c:\git\`
+3. Enter company - `Acne`
+4. Enter project - `Site`
+5. Enter full project name - `Acne Inc.`
 
-This will create:
+This will create the following: `c:\git\Acne.Site\`
 
-c:\git\Acne.Site\ - Project Folder
+This will contain:
 
-Acne.Site
-+ Src
-+ + Acne.Site.Logic - Business Logic folder, including Umbraco Core CMS Binaries
-+ + Acne.Site.Web - Served Website folder
++ `Src\`
+++ `Acne.Site.Logic\` - Business Logic (e.g. POCO's, Helpers, Services)
+++ `Acne.Site.Web\` - Served Website
 
 6. This is a great time to make a Git Commit.
 
@@ -91,5 +90,5 @@ This avoids issues with missing DLL's when rebuilding and deploying the project.
 
 [Security Headers Test](https://securityheaders.io/)
 [Qualys SSL Test](https://www.ssllabs.com/ssltest/)
-[TomSSL - Article - How to Fix HTTP Response Header...](https://tomssl.com/2016/06/30/how-to-fix-the-http-response-headers-on-azure-web-apps-to-get-an-a-plus-on-securityheaders-io/)
+[TomSSL - Article - How to Fix HTTP Response Header...](https://tomssl.com/2016/06/30/how-to-fix-the-http-response-headers-on-azure-web-apps-to-get-an-a-plus-on-securityheaders-io/)  
 
