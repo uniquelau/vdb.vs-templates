@@ -133,8 +133,8 @@ Invoke-Item $TARGETDIR\src\${PROJECT}.sln
 Write-Host "`n**********************************************************" -ForegroundColor Yellow
 Write-Host "*`Your project is now setup." -ForegroundColor Yellow
 Write-Host "*`Please run the Visual Studio solution." -ForegroundColor Yellow
-Write-Host "*`Next install UmbracoCms using NuGet into the Web project." -ForegroundColor Yellow
 Write-Host "*`Next install UmbracoCms.Core using NuGet into the Logic project." -ForegroundColor Yellow
+Write-Host "*`Next install UmbracoCms using NuGet into the Web project." -ForegroundColor Yellow
 Write-Host "*`See the README file for more details." -ForegroundColor Yellow
 Write-Host "*`Tip: Do not override the log4net.config file" -ForegroundColor red
 Write-Host "*`Tip: Now is a good time to make your initial Git commit!" -ForegroundColor red
