@@ -51,10 +51,10 @@ This will contain:
 ## Next setup Umbraco!
 
 1. Run the Visual Studio Solution  (should open automagically)  
-2. Open the Nuget Package Manager, and set the Project to 'Web'  
-3. Run `Install-Package UmbracoCms`  
-4. Open the Nuget Package Manager, and set the Project to 'Logic'  
-5. Run `Install-Package UmbracoCms.Core`  
+2. Open the Nuget Package Manager, and set the Project to 'Logic'  
+3. Run `Install-Package UmbracoCms.Core`  
+4. Open the Nuget Package Manager, and set the Project to 'Web'  
+5. Run `Install-Package UmbracoCms`  
 
 ## Upgrades
 
