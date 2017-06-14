@@ -1,4 +1,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	
+	<!-- Prevent tokenizing connection strings that causes Azure/IIS web publishing issues -->
+	<PropertyGroup>
+		<AutoParameterizationWebConfigConnectionStrings>False</AutoParameterizationWebConfigConnectionStrings>
+	</PropertyGroup>
 
 	<!-- Propertys -->
 	<Import Project="../tools/vdb.Common.Build/MSDeploy.Global.Umbraco.props" />
