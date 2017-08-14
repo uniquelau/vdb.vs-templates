@@ -5,7 +5,7 @@
 		<AutoParameterizationWebConfigConnectionStrings>False</AutoParameterizationWebConfigConnectionStrings>
 	</PropertyGroup>
 
-	<!-- Propertys -->
+	<!-- Properties -->
 	<Import Project="../tools/vdb.Common.Build/MSDeploy.Global.Umbraco.props" />
 
 	<!-- Tasks -->
