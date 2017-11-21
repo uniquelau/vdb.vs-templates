@@ -16,6 +16,7 @@
 [Aa]pp_[Dd]ata/umbraco.config
 [Aa]pp_[Dd]ata/TEMP/*
 [Aa]pp_[Dd]ata/cmsimport/*
+[Aa]pp_[Dd]ata/FormEditor/
 [Aa]pp_[Dd]ata/tea-commerce/
 [Aa]pp_[Dd]ata/ClientDependency/*
 [Aa]pp_[Dd]ata/courier/cache/*
