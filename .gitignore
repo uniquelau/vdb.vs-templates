@@ -6,7 +6,7 @@
 ._*
 .Spotlight-V100
 .Trashes
-[Tt]thumbs.db
+[Tt]humbs.db
 [Ds]esktop.ini
 *.orig
 dwsync.xml
@@ -41,6 +41,7 @@ packages
 [Bb]uild/
 [Rr]elease/
 [Oo]bj/
+.vs/
 
 # When working with multiple visual studio projects
 # It's more reliable to build into one directory e.g. /output
