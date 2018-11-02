@@ -1,0 +1,18 @@
+﻿{
+  "name": "Shufflebottom",
+  "short_name": "Shuffs",
+  "lang": "en",
+  "start_url": "/",
+  "display": "browser",
+  "theme_color": "#8ca5bc",
+  "icons": [
+    {
+      "src": "tile.png",
+      "sizes": "310x310"
+    },
+    {
+      "src": "tile-wide.png",
+      "sizes": "310x150"
+    }
+  ]
+}

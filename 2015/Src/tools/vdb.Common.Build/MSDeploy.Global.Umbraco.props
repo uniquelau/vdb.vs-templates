@@ -35,7 +35,7 @@
     <CustomDirAcl Include="uSync"><AclAccess>Modify</AclAccess></CustomDirAcl>
   </ItemGroup>
 
-  <!-- NOTE:: In debug mode, we everything has write permissions (see VooDoo.MSDeploy.Debug.tasks) -->
+  <!-- NOTE:: In debug mode, the root folder has write permissions (set inside: MSDeploy.Debug.tasks) -->
 
   <!-- ## 'Don't Delete' -->
   <!-- Update /App_Data directory, but don't delete existing files (e.g. server unique cache files) -->
@@ -51,7 +51,6 @@
         <ObjectName>dirPath</ObjectName>
         <AbsolutePath>\\App_Data\\.*</AbsolutePath>
       </MsDeploySkipRules>
-
       <MsDeploySkipRules Include="SkipMedia">
         <SkipAction>Delete</SkipAction>
         <ObjectName>filePath</ObjectName>

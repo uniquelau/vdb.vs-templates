@@ -2,9 +2,10 @@
 @inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
 	Layout = null;
+	Html.RequiresJs("~/scripts/app.js");}
 }
 <!DOCTYPE html>
-<html>
+<html lang="en-gb" class="no-js">
 <head>
 	<title>@(((IMeta)Model.Content).MetaTitle)</title>
 	@if (Model.Content is IMeta)
@@ -13,26 +14,26 @@
 	}
 	@if (Context.IsDebuggingEnabled)
 	{
-		<!-- build:css(.) -->
 		<link href="Css/styles.css" media="screen, projection" rel="stylesheet" type="text/css" />
-		<!-- endbuild -->
 	}
 	 else
 	{
-		<link href="~/Css/minified.css" media="screen, projection" rel="stylesheet" type="text/css" />
+		<link href="~/Css/styles.min.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	}
+	<link rel="manifest" href="/manifest.json">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>window.jQuery || document.write('<script src="/scripts/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+	@RenderSection("Head", false)
 </head>
-	<body>
-		@RenderBody()
-		@if (!Context.IsDebuggingEnabled)
-		{
-			<!-- build:js(.) -->	
-			<script src="scripts/app.js"></script>
-			<!-- endbuild -->
-		}
-		else
-		{
-			<script src="~/Scripts/minified.js"></script>
-		}
-	</body>
+<body>
+    @RenderBody()
+    @Html.RenderJsHere()
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        @StackExchange.Profiling.MiniProfiler.RenderIncludes() // requires umbdebug=true in the querystring
+    }
+</body>
 </html>

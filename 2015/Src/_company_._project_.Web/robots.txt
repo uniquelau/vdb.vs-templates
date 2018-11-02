@@ -1,6 +1,7 @@
-# The site will not be indexed when on Production domain
-# See: \config\RewritesRules.config
+# INDEXING IS DISABLED !
+#
 # By default the site will not be indexed when deployed to *.azurewebsites.net
-
+# Remember to update to exclude your deployment domains: \config\RewritesRules.config
+#
 User-agent: *
 Disallow: /

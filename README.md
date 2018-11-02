@@ -2,7 +2,7 @@
 
 This project aims to:
 
-Creates a fresh Visual Studio solution that contains a Web and Logic project Umbraco.
+Creates a fresh Visual Studio solution that contains a Web and Logic project.
 Give a good starting point for creating your own template, feel free to fork!
 
 In this example we create some scaffolding for strongly typed Models and include

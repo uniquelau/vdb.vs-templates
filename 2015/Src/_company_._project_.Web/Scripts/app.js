@@ -1,14 +1,11 @@
 var _company__project_ = _company__project_ || {};
 
 _company__project_.Example = _company__project_.Example || (function () {
-    //Form validations
-    function initExample() {
-        if (1 == 1) {
-            // do something
-        }
+    function init() {
+        $("html").removeClass("no-js").addClass("js");
     }
     return {
-        initExample: initExample
+        init: init
     };
 }());
 

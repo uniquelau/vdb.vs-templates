@@ -1,0 +1,3 @@
+@model DateTime?
+@if (!Model.HasValue || Model == new DateTime()) { return; }
+@Model.Value.ToString("MMMM dd, yyyy")

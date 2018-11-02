@@ -1,0 +1,29 @@
+/**umb_name:h1*/
+h1 {
+    font-size: 3.52941rem;
+    line-height: 1.15;
+}
+
+/**umb_name:h2*/
+h2 {
+    font-size: 2.35294rem;
+    line-height: 1.15;
+}
+
+/**umb_name:h3*/
+h3 {
+    font-size: 1.41176rem;
+}
+
+/**umb_name:.text-center*/
+.text-center {
+    text-align: center;
+}
+/**umb_name:.text-uppercase*/
+.txt-uppercase {
+    text-transform: uppercase;
+}
+/**umb_name:.text-lowercase*/
+.text-lowercase {
+    text-transform: lowercase;
+}
