@@ -52,9 +52,24 @@ This will contain:
 
 1. Run the Visual Studio Solution  (should open automagically)  
 2. Open the Nuget Package Manager, and set the Project to 'Logic'  
-3. Run `Install-Package UmbracoCms.Core`  
+3. Run 
+
+`Install-Package UmbracoCms.Core`  
+`Install-Package Our.Umbraco.Ditto`  
+
 4. Open the Nuget Package Manager, and set the Project to 'Web'  
-5. Run `Install-Package UmbracoCms`  
+5. Run 
+
+`Install-Package UmbracoCms`  
+`Install-Package ImageProcessor.Plugins.WebP`
+`Install-Package ImageProcessor.Web.PostProcessor`
+`Install-Package Our.Umbraco.Slimsy`
+`Install-Package Our.Umbraco.StackedContent`
+`Install-Package uSync`
+`Install-Package uSync.ContentEdition`
+`Install-Package uSync.ContentMappers`
+`Install-Package nuPickers`
+    
 
 ## Upgrades
 

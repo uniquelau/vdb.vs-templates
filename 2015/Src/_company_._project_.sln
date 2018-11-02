@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2048
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_company_._project_.Web", "_company_._project_.Web\_company_._project_.Web.csproj", "{_guid1_}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_company_._project_.Logic", "_company_._project_.Logic\_company_._project_.Logic\_company_._project_.Logic.csproj", "{_guid2_}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_company_._project_.Logic", "_company_._project_.Logic\_company_._project_.Logic.csproj", "{_guid2_}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

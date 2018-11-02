@@ -10,6 +10,7 @@ _Company_._Project_
     Open 'Src/_Company_._Project_.sln'
 
     Run without debugging for best performance.
+   
 
 ## Build
 
