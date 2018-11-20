@@ -34,4 +34,86 @@
     </CreateItem>
   </Target>
   
+  <!-- Umbraco Target -->
+  <Target Name="Umbraco">
+    <!-- 
+      SUMMARY :: Ensure all Umbraco application and user generated files are included in the build.
+      WHAT :: Get all Umbraco files even when not included inside Visual Studio project (csproj).
+      WHY  :: Support creating assets via Umbraco or in another IDE, e.g. non visual studio users.  
+    -->
+
+    <!-- 
+      SUMMARY :: Project Specific Files
+    -->
+    <CreateItem Include="macroScripts\**\*.cshtml">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="xslt\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="masterpages\**\*.master">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="media\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="usercontrols\**\*.ascx">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="css\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="fonts\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="img\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="scripts\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="views\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="uSync\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <!-- 
+      SUMMARY :: Umbraco Application (v4.11+)
+    -->
+    <CreateItem Include="App_Browsers\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="App_Code\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="App_Plugins\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="Bin\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="Config\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="Umbraco\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <CreateItem Include="Umbraco_Client\**\*.*">
+      <Output ItemName="Content" TaskParameter="Include" />
+    </CreateItem>
+    <!-- 
+      SUMMARY :: Copy files from the 'output', into the web applications /Bin folder. This resolves issues with Visual Studio removing unreferenced DLL's (e.g. the Umbraco DLL's)
+    -->
+
+  </Target>
+
+  <Target Name="CopyBinaries">
+    <ItemGroup>
+      <ProjectsOutput Include="..\output\*" />
+    </ItemGroup>
+    <Message Text="We should copy @(ProjectsOutput) to $(MSBuildProjectDirectory)\bin\%(RecursiveDir)" />
+    <Copy SourceFiles="@(ProjectsOutput)"	DestinationFolder="$(MSBuildProjectDirectory)\bin\%(RecursiveDir)" />
+  </Target>
+  
 </Project>
