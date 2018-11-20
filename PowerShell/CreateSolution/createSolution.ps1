@@ -10,7 +10,7 @@ Param (
     $COMPANYFULLNAME,
     $List = "ReplacementList.csv",
     $Find = '*_company_._project_*' ,
-    $UpdateFiles = ('app.js' , '*.asax' , '*.csproj' , '*.cs' , '*.cshtml', '*.config' , '*.gitignore' , '*.md' , 'package.json' , '*.sln')
+    $UpdateFiles = ('app.js' , '*.asax' , '*.csproj' , '*.cs' , '*.cshtml', '*.config' , '*.gitignore' , '*.md' , 'package.json' , '*.sln', '*.yml')
 )
 
 
