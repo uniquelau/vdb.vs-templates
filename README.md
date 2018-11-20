@@ -56,6 +56,9 @@ This will contain:
 
 `Install-Package UmbracoCms.Core`  
 `Install-Package Our.Umbraco.Ditto`  
+`Install-Package Our.Umbraco.Slimsy`
+`Install-Package nuPickers`
+
 
 4. Open the Nuget Package Manager, and set the Project to 'Web'  
 5. Run 
@@ -69,6 +72,7 @@ This will contain:
 `Install-Package uSync.ContentEdition`
 `Install-Package uSync.ContentMappers`
 `Install-Package nuPickers`
+`Install-Package Umbraco.ModelsBuilder.Api`
     
 
 ## Upgrades
