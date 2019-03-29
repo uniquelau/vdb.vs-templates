@@ -8,7 +8,7 @@
 	</Target>
 
 	<!-- After Build -->
-	<Target Name="AfterBuild" DependsOnTargets="">
+	<Target Name="AfterBuild" DependsOnTargets="CopyBinaries">
 	</Target>
 
 </Project>
