@@ -46,7 +46,7 @@
     <ProjectReference Include="..\_company_._project_.Logic\_company_._project_.Logic.csproj">
       <Project>{_guid2_}</Project>
       <Name>_company_._project_.Logic</Name>
-      <Private>False</Private>
+      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
