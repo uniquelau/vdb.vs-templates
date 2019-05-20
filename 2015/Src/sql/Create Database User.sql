@@ -1,6 +1,6 @@
 /* Run on the 'Master' Database */
 
-CREATE LOGIN username WITH password='>.> aaaaBBBBccccDDDD'
+CREATE LOGIN [username] WITH password='>.> aaaaBBBBccccDDDD'
 GO
  
 CREATE USER [username] FOR LOGIN [username] WITH DEFAULT_SCHEMA=[dbo]
