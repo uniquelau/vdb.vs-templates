@@ -4,42 +4,42 @@
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 pool:
-vmImage: 'VS2017-Win2016'
+  vmImage: 'VS2017-Win2016'
 
 variables:
-solution: '**/*.sln'
-webProject: '/Src/_company_._project_.Web/'
-buildPlatform: 'Any CPU'
-buildConfiguration: 'Release'
+  solution: '**/*.sln'
+  webProject: '/Src/_company_._project_.Web/'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
 
 steps:
 - task: NuGetToolInstaller@0
 
 - task: NuGetCommand@2
-inputs:
-restoreSolution: '$(solution)'
+  inputs:
+    restoreSolution: '$(solution)'
 
 - task: Npm@1
-inputs:
-workingDir: '$(webProject)'
+  inputs:
+    workingDir: '$(webProject)'
 
 - task: gulp@0
-inputs:
-gulpFile: '$(webProject)/gulpfile.js'
-targets: 'build'
+  inputs:
+    gulpFile: '$(webProject)/gulpfile.js'
+    targets: 'build'
 
 - task: VSBuild@1
-inputs:
-solution: '$(solution)'
-msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-platform: '$(buildPlatform)'
-configuration: '$(buildConfiguration)'
+  inputs:
+    solution: '$(solution)'
+    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: VSTest@2
-inputs:
-platform: '$(buildPlatform)'
-configuration: '$(buildConfiguration)'
+  inputs:
+    platform: '$(buildPlatform)'
+    configuration: '$(buildConfiguration)'
 
 - task: PublishBuildArtifacts@1
-inputs:
-artifactName: 'www' 
+  inputs:
+  artifactName: 'www' 
