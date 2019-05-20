@@ -8,7 +8,7 @@ vmImage: 'VS2017-Win2016'
 
 variables:
 solution: '**/*.sln'
-webProject: '/Src/_company_._project.Web/'
+webProject: '/Src/_company_._project_.Web/'
 buildPlatform: 'Any CPU'
 buildConfiguration: 'Release'
 
