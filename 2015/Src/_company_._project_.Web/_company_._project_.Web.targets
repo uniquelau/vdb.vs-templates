@@ -4,7 +4,7 @@
 	<Import Project="../tools/vdb.Common.Build/Umbraco.targets" />
 
 	<!-- Hook into BeforeBuild and ensure the ABOVE Targets run (DependsOnTargets)-->
-	<Target Name="BeforeBuild" DependsOnTargets="AddScriptsAndCssToOutput; AddMediaToOutput">
+	<Target Name="BeforeBuild" DependsOnTargets="AddScriptsAndCssToOutput; AdduSyncToOutput; AddMediaToOutput">
 	</Target>
 
 	<!-- After Build -->
